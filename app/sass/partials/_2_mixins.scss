@@ -1,0 +1,46 @@
+
+///****** -----sass-mixins -----sass-mixins -----sass-mixins -----sass-mixins -----sass-mixins -----sass-mixins*****?////////
+
+///border-it
+@mixin b1 ($color : red){border: 1px solid $color;}
+@mixin b2 ($color : red){border: 1px dashed $color;}
+@mixin b3 ($color : red){border: 1px dotted $color;}
+
+.border-me{
+  @include b1;
+}
+
+
+///target all h tags
+/// @include headings { **whatever***}
+
+@mixin h-tags {
+    h1, h2, h3,
+    h4, h5, h6 {
+        @content;
+    }
+}
+
+///PX TO REM*****PX TO REM*****PX TO REM*****///////
+
+///function
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+///mixin
+@mixin fontSize($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+
+////use it like this
+//h1 {
+//  @include fontSize(32px);
+//}
+
+@mixin marginBtm($size) {
+  margin-bottom: $size; //Fallback in px
+  margin-bottom: calculateRem($size);
+}

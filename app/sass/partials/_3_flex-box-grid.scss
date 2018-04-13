@@ -1,0 +1,318 @@
+/////////////////////////////////////
+///****   flex-box-grid.scss  ****///
+/////////////////////////////////////
+
+*{
+  -moz-box-sizing: border-box;
+ box-sizing: border-box;
+}
+
+///***   Breakpoints   ***///
+
+//mixins
+@mixin media-zero{
+  @media (max-width: #{$media-sml}) {
+    @content;
+  }
+}
+@mixin media-sml {
+  @media (min-width: #{$media-sml}) {
+    @content;
+  }
+}
+@mixin media-med {
+  @media (min-width: #{$media-med}) {
+    @content;
+  }
+}
+@mixin media-lrg {
+  @media (min-width: #{$media-lrg}) {
+    @content;
+  }
+}
+@mixin media-lrg-xl {
+  @media (min-width: #{$media-lrg-xl}) {
+    @content;
+  }
+}
+
+@mixin media-sml-max {
+  @media (max-width: #{$media-sml}) {
+    @content;
+  }
+}
+@mixin media-med-max {
+  @media (max-width: #{$media-med}) {
+    @content;
+  }
+}
+@mixin media-lrg-max {
+  @media (max-width: #{$media-lrg}) {
+    @content;
+  }
+}
+@mixin media-lrg-xl-max {
+  @media (max-width: #{$media-lrg-xl}) {
+    @content;
+  }
+}
+
+
+
+
+
+///***   Containers   ***///
+.container {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    max-width: $body-max-width;
+    width: 95%;
+
+
+///*** Breakpoints ***///
+  @include media-sml {
+    width: 95%;
+  }
+  @include media-med {
+    width: 90%
+  }
+  @include media-lrg {
+    width: 90%
+  }
+  @include media-lrg-xl{
+    width: 90%
+  }
+}
+
+
+///*** FLEX FLEX FLEX ***///
+
+//**  Flex Containers
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row{
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  overflow: hidden;
+  margin: 0;
+}
+
+.push-down{flex: 1;}
+.flex-shrink{flex-shrink: 0;}
+
+//**  Flex Align
+.justify-center{justify-content: center;}
+.justify-around{justify-content: space-around;}
+.justify-between{justify-content: space-between;}
+.justify-end{justify-content: flex-end;}
+.justify-start{justify-content: flex-start;}
+
+.align-center{align-items: center;}
+.align-baseline{align-items: baseline;}
+.align-end{align-items: flex-end;}
+.align-start{align-items: flex-start;}
+.align-stretch{align-items: stretch}
+
+.align-self-center {align-self: center;}
+.align-self-end {align-self: flex-end;}
+.align-self-start {align-self: flex-start;}
+.align-self-stretch{align-self: stretch;}
+.align-self-auto{align-self:auto;}
+
+//** Flex Items
+
+////makes everythin 100% width on mobile unless using a .zero-# class
+.sml-1, .sml-2, .sml-3, .sml-4, .sml-5, .sml-6, .sml-7, .sml-8, .sml-9, .sml-10, .sml-11, .sml-12{
+  flex-grow: 0;
+  @media( max-width: 576px){
+    width: 100%;
+  }
+}
+
+.zero-1{@include media-zero{width: 8.333333%;}}
+.zero-2{@include media-zero{width: 16.666667%;}}
+.zero-3{@include media-zero{width: 25%;}}
+.zero-4{@include media-zero{width: 33.333333%;}}
+.zero-5{@include media-zero{width: 41.666667%;}}
+.zero-6{@include media-zero{width: 50%;}}
+.zero-7{@include media-zero{width: 58.333333%;}}
+.zero-8{@include media-zero{width: 66.666667%;}}
+.zero-9{@include media-zero{width: 75%;}}
+.zero-10{@include media-zero{width: 83.333333%;}}
+.zero-11{@include media-zero{width: 91.666667%;}}
+.zero-12{@include media-zero{width: 100%;}}
+
+
+
+.sml-1{@include media-sml{width: 8.333333%;}}
+.sml-2{@include media-sml{width: 16.666667%;}}
+.sml-3{@include media-sml{width: 25%;}}
+.sml-4{@include media-sml{width: 33.333333%;}}
+.sml-5{@include media-sml{width: 41.666667%;}}
+.sml-6{@include media-sml{width: 50%;}}
+.sml-7{@include media-sml{width: 58.333333%;}}
+.sml-8{@include media-sml{width: 66.666667%;}}
+.sml-9{@include media-sml{width: 75%;}}
+.sml-10{@include media-sml{width: 83.333333%;}}
+.sml-11{@include media-sml{width: 91.666667%;}}
+.sml-12{@include media-sml{width: 100%;}}
+
+///med
+//stops the flex growing when a width is applied
+.med-1, .med-2, .med-3, .med-4, .med-5, .med-6, .med-7, .med-8, .med-9, .med-10, .med-11, .med-12{
+  flex-grow: 0;
+}
+
+.med-1{@include media-med{width: 8.333333%;}}
+.med-2{@include media-med{width: 16.666667%;}}
+.med-3{@include media-med{width: 25%;}}
+.med-4{@include media-med{ width: 33.333333%;}}
+.med-5{@include media-med{width: 41.666667%;}}
+.med-6{@include media-med{width: 50%;}}
+.med-7{@include media-med{width: 58.333333%;}}
+.med-8{@include media-med{width: 66.666667%;}}
+.med-9{@include media-med{width: 75%;}}
+.med-10{@include media-med{width: 83.333333%;}}
+.med-11{@include media-med{width: 91.666667%;}}
+.med-12{@include media-med{width: 100%;}}
+
+/////lrg
+
+//stops the flex growing when a width is applied
+.lrg-1, .lrg-2, .lrg-3, .lrg-4, .lrg-5, .lrg-6, .lrg-7, .lrg-8, .lrg-9, .lrg-10, .lrg-11, .lrg-12{
+  flex-grow: 0;
+}
+
+.lrg-1{
+  @include media-lrg{
+    width: 8.333333%;
+  }
+}
+.lrg-2{
+  @include media-lrg{
+    width: 16.666667%;
+  }
+}
+.lrg-3{
+  @include media-lrg{
+    width: 25%;
+  }
+}
+.lrg-4{
+  @include media-lrg{
+    width: 33.333333%;
+  }
+}
+.lrg-5{
+  @include media-lrg{
+    width: 41.666667%;
+  }
+}
+.lrg-6{
+  @include media-lrg{
+    width: 50%;
+  }
+}
+.lrg-7{
+  @include media-lrg{
+    width: 58.333333%;
+  }
+}
+.lrg-8{
+  @include media-lrg{
+    width: 66.666667%;
+  }
+}
+.lrg-9{
+  @include media-lrg{
+    width: 75%;
+  }
+}
+.lrg-10{
+  @include media-lrg{
+    width: 83.333333%;
+  }
+}
+.lrg-11{
+  @include media-lrg{
+    width: 91.666667%;
+  }
+}
+.lrg-12{
+  @include media-lrg{
+    width: 100%;
+  }
+}
+
+
+///med
+//stops the flex growing when a width is applied
+.lrg-xl-1, .lrg-xl-2, .lrg-xl-3, .lrg-xl-4, .lrg-xl-5, .lrg-xl-6, .lrg-xl-7, .lrg-xl-8, .lrg-xl-9, .lrg-xl-10, .lrg-xl-11, .lrg-xl-12{
+  flex-grow: 0;
+}
+
+.lrg-xl-1{
+  @include media-lrg-xl{
+    width: 8.333333%;
+  }
+}
+.lrg-xl-2{
+  @include media-lrg-xl{
+    width: 16.666667%;
+  }
+}
+.lrg-xl-3{
+  @include media-lrg-xl{
+    width: 25%;
+  }
+}
+.lrg-xl-4{
+  @include media-lrg-xl{
+    width: 33.333333%;
+  }
+}
+.lrg-xl-5{
+  @include media-lrg-xl{
+    width: 41.666667%;
+  }
+}
+.lrg-xl-6{
+  @include media-lrg-xl{
+    width: 50%;
+  }
+}
+.lrg-xl-7{
+  @include media-lrg-xl{
+    width: 58.333333%;
+  }
+}
+.lrg-xl-8{
+  @include media-lrg-xl{
+    width: 66.666667%;
+  }
+}
+.lrg-xl-9{
+  @include media-lrg-xl{
+    width: 75%;
+  }
+}
+.lrg-xl-10{
+  @include media-lrg-xl{
+    width: 83.333333%;
+  }
+}
+.lrg-xl-11{
+  @include media-lrg-xl{
+    width: 91.666667%;
+  }
+}
+.lrg-xl-12{
+  @include media-lrg-xl{
+    width: 100%;
+  }
+}

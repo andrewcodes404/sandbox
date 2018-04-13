@@ -1,0 +1,70 @@
+/////////////////////////////////
+///****   settings.scss   ****///
+/////////////////////////////////
+
+$pink           :   #F3486F;
+$pink-light     :   #F78DA1;
+$yellowish      :   #ffbb00;
+$orange-how-to  :   #F54B15;
+$orange-hot-to-lighter : #f47d57;
+$orange-think   :   #FB6E2B;
+$grey-dark			:		#5e6162;
+$grey      			:   #95989A;
+$grey-light			: #b4b1a2;
+$sky-blue       :   #66cee8;
+$green-light    :   #21A686;
+$aero-glue      :   #B4FCDD;
+
+//////STOPS SAFARI INVENTING Horizontal Scroll
+html { overflow-x: hidden; }
+body { overflow-x: hidden; }
+
+$body-max-width : 1200px;
+
+///images
+img{
+	width:100%;
+	vertical-align: bottom; //stops that annoying 2px gap at the btm of imgs
+	height: auto;
+}
+
+///***************///
+///**Breakpoints**///
+///***************///
+
+$media-sml: 576px;
+$media-med: 768px;
+$media-lrg: 992px;
+$media-lrg-xl: 1200px;
+
+//Padding and margins
+$global-margin: 1rem;
+$global-padding: 1rem;
+
+$padding1  :  1rem;
+$padding2  :  2rem;
+$padding3  :  3rem;
+
+$margin1  :  1rem;
+$margin2  :  2rem;
+$margin3  :  3rem;
+
+//colors
+$primary : darkcyan;
+$secondary : silver;
+
+$links: black;
+$links-hover: $yellowish;
+$links-secondary: pink;
+$links-secondary-hover: orange;
+
+$background-color1 : $primary;
+$background-color2 : #f66100;
+$background-color3 : #854470;
+
+$columns-width: 225px;
+
+
+$lightgrey	: #d7d7d7;
+$grey				: #919191;
+$darkgrey		: #505050;
